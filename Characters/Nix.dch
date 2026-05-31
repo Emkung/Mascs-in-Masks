@@ -1,0 +1,85 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "nixMask",
+&"description": "",
+&"display_name": "Nix",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"nixDefault": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixNormal.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixHappy": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixHappy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixMask": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixMask.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixSad": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixSad.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixScared": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixScared.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixShy": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixShy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"nixSmiling": {
+"export_overrides": {
+"image": "\"res://Assets/nix/nixSmiling.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

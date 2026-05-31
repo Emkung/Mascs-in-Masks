@@ -1,0 +1,76 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(1, 1, 1, 1),
+&"custom_info": {
+"prefix": "",
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "",
+"suffix": ""
+},
+&"default_portrait": "ionMask",
+&"description": "",
+&"display_name": "Ion",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"ionCrazy": {
+"export_overrides": {
+"image": "\"res://Assets/ion/ionCrazy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ionDefault": {
+"export_overrides": {
+"image": "\"res://Assets/ion/ionDefault.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ionMask": {
+"export_overrides": {
+"image": "\"res://Assets/ion/IonMask.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ionShocked": {
+"export_overrides": {
+"image": "\"res://Assets/ion/ionShocked.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ionShy": {
+"export_overrides": {
+"image": "\"res://Assets/ion/ionShy.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"ionStern": {
+"export_overrides": {
+"image": "\"res://Assets/ion/ionStern.PNG\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}
