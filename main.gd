@@ -1,6 +1,5 @@
 extends Node2D
 @onready var bg_phone: Sprite2D = $bg_phone
-@export var nix_button: TextureButton 
 @export var ion_button: TextureButton
 @export var animation_player: AnimationPlayer
 
@@ -26,23 +25,23 @@ func _on_ion_pressed() -> void:
 
 
 func _on_nix_mouse_entered() -> void:
-	animation_player.play("nix")
+	if not animation_player.is_playing():
+		animation_player.play("nix")
 	
 	
 
 
 func _on_nix_mouse_exited() -> void:
-	#nix_button.z_index = 0
-	#nix_button.scale = Vector2(0.85,0.85)
-	animation_player.play("nix out")
+	if not animation_player.is_playing():
+		animation_player.play("nix out")
 	
 
 
 func _on_ion_mouse_entered() -> void:
-	ion_button.z_index = 1
-	ion_button.scale = Vector2(0.9,0.9)
+	if not animation_player.is_playing():
+		animation_player.play("ion")
 
 
 func _on_ion_mouse_exited() -> void:
-	ion_button.z_index = 0
-	ion_button.scale = Vector2(0.85,0.85)
+	if not animation_player.is_playing():
+		animation_player.play("ion out")
