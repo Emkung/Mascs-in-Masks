@@ -1,17 +1,453 @@
-[gd_scene load_steps=10 format=3 uid="uid://ca4aqoej3woik"]
+[gd_scene load_steps=13 format=3 uid="uid://ca4aqoej3woik"]
 
 [ext_resource type="Script" uid="uid://2yi1p8ji8jp3" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bs5g2m4bgp5pn" path="res://Assets/Bgs/player_room.png" id="2_lquwl"]
 [ext_resource type="Texture2D" uid="uid://b6mqbg6g2ah52" path="res://Assets/misc/title screen.png" id="3_7mycd"]
 [ext_resource type="Texture2D" uid="uid://bc4hh1ty27nfo" path="res://Assets/misc/phone bg.png" id="4_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bjgw8mje6bv3g" path="res://Assets/misc/phone!.png" id="4_272bh"]
-[ext_resource type="Texture2D" uid="uid://drgubdvdgxp2q" path="res://Assets/misc/dislikw.png" id="5_kek77"]
-[ext_resource type="Texture2D" uid="uid://dm5cu5t7r081o" path="res://Assets/misc/like.png" id="6_4c57u"]
 [ext_resource type="Texture2D" uid="uid://dnjjc6n5h4v2r" path="res://Assets/misc/Nix.png" id="7_kek77"]
 [ext_resource type="Texture2D" uid="uid://cu7w4bi0hdlr2" path="res://Assets/misc/Ion.png" id="8_4c57u"]
 
-[node name="Main" type="Node2D"]
+[sub_resource type="Animation" id="Animation_272bh"]
+resource_name = "box"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333, 1),
+"transitions": PackedFloat32Array(1, 0.450625, 1),
+"update": 0,
+"values": [Vector2(130, 104), Vector2(410, 104), Vector2(502, 104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.46667, 1.86667, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.541176), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "you've matched"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.233333, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5vw27"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(130, 104)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.886275)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RichTextLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["you've matched"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RichTextLabel:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.466667)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D/Nix:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.85, 0.85)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprite2D/Nix:z_index")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Sprite2D/Nix/ColorRect:size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 104)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Sprite2D/Nix/ColorRect:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Sprite2D/Nix/ColorRect:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(416, -64)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../Sprite2D/Nix/ColorRect/RichTextLabel:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../Sprite2D/ColorRect:z_index")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../Sprite2D/ColorRect:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../Sprite2D/letsTalk:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kek77"]
+resource_name = "nix"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D/Nix:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.85, 0.85), Vector2(0.89, 0.89), Vector2(0.9, 0.9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D/Nix:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D/Nix/ColorRect:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.433333, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 104), Vector2(244, 104)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite2D/Nix/ColorRect:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D/Nix/ColorRect:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.433333, 0.633333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(416, -64), Vector2(182, -64)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprite2D/Nix/ColorRect/RichTextLabel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.41, 0.66),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Sprite2D/ColorRect:z_index")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Sprite2D/ColorRect:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.166667, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../Sprite2D/letsTalk:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.26),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4c57u"]
+resource_name = "nix out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D/letsTalk:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.52),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite2D/Nix/ColorRect:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244, 104), Vector2(9, 104)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Sprite2D/Nix/ColorRect:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(182, -64), Vector2(462, -64)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sprite2D/Nix/ColorRect/RichTextLabel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sprite2D/Nix:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.23),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(0.85, 0.85)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../Sprite2D/Nix/ColorRect:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.37),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../Sprite2D/Nix:z_index")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4c57u"]
+_data = {
+&"RESET": SubResource("Animation_5vw27"),
+&"box": SubResource("Animation_272bh"),
+&"nix": SubResource("Animation_kek77"),
+&"nix out": SubResource("Animation_4c57u")
+}
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("nix_button", "ion_button", "animation_player")]
 script = ExtResource("1_1bvp3")
+nix_button = NodePath("bg_phone/Sprite2D/Nix")
+ion_button = NodePath("bg_phone/Sprite2D/Ion")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../bg_phone/ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_4c57u")
+}
 
 [node name="bg" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
@@ -26,45 +462,123 @@ texture = ExtResource("3_7mycd")
 [node name="Sprite2D" type="Sprite2D" parent="bg_phone"]
 texture = ExtResource("4_5vw27")
 
-[node name="Button" type="Button" parent="bg_phone/Sprite2D"]
-visible = false
-offset_left = -100.0
-offset_top = 125.0
-offset_right = 80.0
-offset_bottom = 347.0
-icon = ExtResource("5_kek77")
-flat = true
-
-[node name="Button2" type="Button" parent="bg_phone/Sprite2D"]
-visible = false
-offset_left = 13.3333
-offset_top = 25.0
-offset_right = 202.333
-offset_bottom = 247.0
-icon = ExtResource("6_4c57u")
-flat = true
+[node name="ColorRect" type="ColorRect" parent="bg_phone/Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -251.0
+offset_top = -476.0
+offset_right = -251.0
+offset_bottom = -476.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
 
 [node name="Nix" type="TextureButton" parent="bg_phone/Sprite2D"]
-offset_left = -235.0
-offset_top = -10.0
-offset_right = 217.0
-offset_bottom = 503.0
+offset_left = -141.935
+offset_top = -36.625
+offset_right = 310.065
+offset_bottom = 476.375
+rotation = 0.261799
+scale = Vector2(0.85, 0.85)
 texture_normal = ExtResource("7_kek77")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="ColorRect" type="ColorRect" parent="bg_phone/Sprite2D/Nix"]
+visible = false
+z_index = 2
+offset_left = 416.0
+offset_top = -64.0
+offset_right = 426.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg_phone/Sprite2D/Nix/ColorRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 41
+text = "Nix, 24"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Ion" type="TextureButton" parent="bg_phone/Sprite2D"]
-offset_left = -233.333
-offset_top = -510.0
-offset_right = 218.667
-offset_bottom = 3.0
+offset_left = -264.103
+offset_top = -370.543
+offset_right = 187.897
+offset_bottom = 142.457
+rotation = -0.261799
+scale = Vector2(0.85, 0.85)
 texture_normal = ExtResource("8_4c57u")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="letsTalk" type="RichTextLabel" parent="bg_phone/Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+clip_contents = false
+offset_left = -240.0
+offset_top = -363.333
+offset_right = 287.0
+offset_bottom = -198.333
+rotation = 0.261799
+theme_override_font_sizes/normal_font_size = 141
+text = "TALK!"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bg_phone/Sprite2D/letsTalk"]
+z_index = 2
+offset_left = 14.9429
+offset_top = -73.0224
+offset_right = 322.943
+offset_bottom = 77.9776
+theme_override_font_sizes/normal_font_size = 81
+text = "LET'S"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="phone" type="Sprite2D" parent="bg_phone"]
+z_index = 4
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_272bh")
 
+[node name="ColorRect" type="ColorRect" parent="bg_phone"]
+modulate = Color(1, 1, 1, 0.886275)
+z_index = 3
+offset_left = -262.0
+offset_top = 15.0
+offset_right = -132.0
+offset_bottom = 119.0
+rotation = -0.261799
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bg_phone/ColorRect"]
+modulate = Color(1, 1, 1, 0.466667)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 41
+text = "you've matched"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_mouse_entered"]
+[connection signal="mouse_exited" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_mouse_exited"]
 [connection signal="pressed" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_pressed"]
+[connection signal="mouse_entered" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_mouse_entered"]
+[connection signal="mouse_exited" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_mouse_exited"]
 [connection signal="pressed" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_pressed"]
