@@ -661,12 +661,20 @@ _data = {
 &"nix out": SubResource("Animation_4c57u")
 }
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("ion_button", "animation_player")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("ion_button", "animation_player", "anim_2", "anim_3")]
 script = ExtResource("1_1bvp3")
 ion_button = NodePath("bg_phone/Sprite2D/Ion")
 animation_player = NodePath("AnimationPlayer")
+anim_2 = NodePath("AnimationPlayer2")
+anim_3 = NodePath("AnimationPlayer3")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../bg_phone/ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_4c57u")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../bg_phone/ColorRect")
 libraries = {
 &"": SubResource("AnimationLibrary_4c57u")
@@ -717,6 +725,7 @@ offset_left = 416.0
 offset_top = -64.0
 offset_right = 426.0
 offset_bottom = 40.0
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="bg_phone/Sprite2D/Nix/ColorRect"]
 modulate = Color(1, 1, 1, 0)
@@ -727,6 +736,7 @@ anchor_bottom = 1.0
 offset_right = 12.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 41
 text = "Nix, 24"
@@ -751,6 +761,7 @@ offset_left = -134.0
 offset_top = 482.0
 offset_right = -122.0
 offset_bottom = 586.0
+mouse_filter = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="bg_phone/Sprite2D/Ion/ColorRect"]
 modulate = Color(1, 1, 1, 0)
@@ -760,6 +771,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 41
 text = "Ion, 29"
@@ -847,9 +859,39 @@ text = "you've matched"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="mouse_entered" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_mouse_entered"]
-[connection signal="mouse_exited" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_mouse_exited"]
-[connection signal="pressed" from="bg_phone/Sprite2D/Nix" to="." method="_on_nix_pressed"]
-[connection signal="mouse_entered" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_mouse_entered"]
-[connection signal="mouse_exited" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_mouse_exited"]
-[connection signal="pressed" from="bg_phone/Sprite2D/Ion" to="." method="_on_ion_pressed"]
+[node name="nix_button" type="Button" parent="bg_phone"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.002
+offset_left = -137.0
+offset_top = -38.0
+offset_right = -255.0
+offset_bottom = -552.904
+rotation = 0.261799
+
+[node name="ion_button" type="Button" parent="bg_phone"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -0.036
+anchor_top = 0.104
+anchor_right = -0.036
+anchor_bottom = 0.104
+offset_left = -250.928
+offset_top = -476.008
+offset_right = 136.072
+offset_bottom = -34.008
+rotation = -0.261799
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+root_node = NodePath("../bg_phone/ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_4c57u")
+}
+
+[connection signal="mouse_entered" from="bg_phone/nix_button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="bg_phone/nix_button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="bg_phone/nix_button" to="." method="_on_nix_button_pressed"]
+[connection signal="mouse_entered" from="bg_phone/ion_button" to="." method="_on_ion_button_mouse_entered"]
+[connection signal="mouse_exited" from="bg_phone/ion_button" to="." method="_on_ion_button_mouse_exited"]
+[connection signal="pressed" from="bg_phone/ion_button" to="." method="_on_ion_button_pressed"]
