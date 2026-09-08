@@ -30,10 +30,13 @@ directories/dtl_directory={
 "AloneTimeline": "res://Timlines/AloneTimeline.dtl",
 "ionTimeline1": "res://Timlines/ionTimeline1.dtl",
 "nixTimeline1": "res://Timlines/nixTimeline1.dtl",
+"styletimeline": "res://Timlines/styletimeline.dtl",
 "timeline1": "res://Timlines/timeline1.dtl"
 }
-layout/style_directory={}
-layout/style_list=[]
+layout/style_directory={
+"basicStyle": "res://Timlines/New_File.tres"
+}
+layout/style_list=["res://Timlines/New_File.tres"]
 layout/default_style=""
 glossary/default_case_sensitive=true
 variables={}

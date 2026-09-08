@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca4aqoej3woik"]
+
+[ext_resource type="Script" uid="uid://2yi1p8ji8jp3" path="res://Script/main.gd" id="1_4j5ol"]
+[ext_resource type="Texture2D" uid="uid://bs5g2m4bgp5pn" path="res://Assets/Bgs/player_room.png" id="2_p1hux"]
+[ext_resource type="PackedScene" uid="uid://brrldmb0tbqro" path="res://scene/swipe.tscn" id="3_of57s"]
+[ext_resource type="PackedScene" uid="uid://dtrh6ps0hiycp" path="res://scene/phone_double_match.tscn" id="4_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://b76ryr18of6qu" path="res://scene/phone_ion_match.tscn" id="5_tqoya"]
+[ext_resource type="PackedScene" uid="uid://ds0g2v4vbgt5g" path="res://scene/phone_nix_match.tscn" id="6_k65ib"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_4j5ol")
+
+[node name="bg" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_p1hux")
+centered = false
+
+[node name="swipe" parent="." node_paths=PackedStringArray("bothRoute", "nixRoute", "ionRoute") instance=ExtResource("3_of57s")]
+z_index = 4
+bothRoute = NodePath("../BothRoute")
+nixRoute = NodePath("../NixRoute")
+ionRoute = NodePath("../IonRoute")
+
+[node name="BothRoute" parent="." instance=ExtResource("4_b5f6u")]
+visible = false
+
+[node name="IonRoute" parent="." instance=ExtResource("5_tqoya")]
+visible = false
+
+[node name="NixRoute" parent="." instance=ExtResource("6_k65ib")]
+visible = false

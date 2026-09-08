@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2tjery10ndpe"]
+
+[ext_resource type="Script" uid="uid://b3bhjoiamsflk" path="res://Script/phone_nix_match.gd" id="1_wsfhd"]
+[ext_resource type="Texture2D" uid="uid://b6mqbg6g2ah52" path="res://Assets/misc/title screen.png" id="2_cskkw"]
+[ext_resource type="Texture2D" uid="uid://bc4hh1ty27nfo" path="res://Assets/misc/phone bg.png" id="3_hdqi4"]
+[ext_resource type="Texture2D" uid="uid://bjgw8mje6bv3g" path="res://Assets/misc/phone!.png" id="5_61nex"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = 3.33333
+offset_right = -1272.0
+offset_bottom = -540.667
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wsfhd")
+
+[node name="bg_phone" type="Sprite2D" parent="."]
+position = Vector2(583, 328)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_cskkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="bg_phone"]
+texture = ExtResource("3_hdqi4")
+
+[node name="ColorRect" type="ColorRect" parent="bg_phone/Sprite2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -251.0
+offset_top = -476.0
+offset_right = -251.0
+offset_bottom = -476.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.717647)
+
+[node name="phone" type="Sprite2D" parent="bg_phone"]
+z_index = 4
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("5_61nex")

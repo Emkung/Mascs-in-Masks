@@ -5,15 +5,20 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animation_player.play("box")
-	anim_2.play("ion")
+	#animation_player.play("box")
+	#anim_2.play("ion")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-
+func play_animation() -> void:
+	animation_player.play("box")
+	anim_2.play("ion")
+	
+	
 func _on_ion_button_pressed() -> void:
 	anim_2.play("ion out")
 	await anim_2.animation_finished

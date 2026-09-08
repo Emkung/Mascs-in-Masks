@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=6 format=3 uid="uid://dw0yxop2gylal"]
+
+[ext_resource type="Script" uid="uid://bwg6yncmh2cml" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_66xyx"]
+[ext_resource type="Script" uid="uid://yivwmkfwrvfr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.gd" id="1_rh6q5"]
+[ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_pyyvd"]
+
+[sub_resource type="PackedScene" id="PackedScene_rmjt6"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("DefaultLayoutBase", "CanvasLayer", "script"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0),
+"variants": [ExtResource("1_rh6q5")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_rh6q5"]
+script = ExtResource("1_66xyx")
+scene = SubResource("PackedScene_rmjt6")
+overrides = {}
+
+[resource]
+script = ExtResource("2_pyyvd")
+name = "phone_style"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_rh6q5")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_66xyx")]([])
+metadata/_latest_layer = ""
